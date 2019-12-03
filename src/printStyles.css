@@ -1,4 +1,7 @@
-@page {
-	margin: 0;
-	background-color: red;
+h2 {
+	color: blueviolet;
+}
+
+p {
+	color: pink;
 }

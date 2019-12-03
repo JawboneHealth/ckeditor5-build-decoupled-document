@@ -26,7 +26,7 @@ module.exports = {
 		path: path.resolve( __dirname, 'build' ),
 		filename: 'ckeditor.js',
 		libraryTarget: 'umd',
-		libraryExport: 'default'
+		libraryExport: 'default',
 	},
 
 	optimization: {
@@ -36,11 +36,11 @@ module.exports = {
 				uglifyOptions: {
 					output: {
 						// Preserve CKEditor 5 license comments.
-						comments: /^!/
-					}
-				}
-			} )
-		]
+						comments: /^!/,
+					},
+				},
+			} ),
+		],
 	},
 
 	plugins: [
@@ -48,19 +48,19 @@ module.exports = {
 			// UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
 			// When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.js).
 			language: 'en',
-			additionalLanguages: 'all'
+			additionalLanguages: 'all',
 		} ),
 		new webpack.BannerPlugin( {
 			banner: bundler.getLicenseBanner(),
-			raw: true
-		} )
+			raw: true,
+		} ),
 	],
 
 	module: {
 		rules: [
 			{
 				test: /\.svg$/,
-				use: [ 'raw-loader' ]
+				use: [ 'raw-loader' ],
 			},
 			{
 				test: /\.css$/,
@@ -68,20 +68,22 @@ module.exports = {
 					{
 						loader: 'style-loader',
 						options: {
-							injectType: 'singletonStyleTag'
-						}
+							injectType: 'singletonStyleTag',
+						},
 					},
 					{
 						loader: 'postcss-loader',
 						options: styles.getPostCssConfig( {
 							themeImporter: {
-								themePath: require.resolve( '@ckeditor/ckeditor5-theme-lark' )
+								themePath: require.resolve(
+									'@ckeditor/ckeditor5-theme-lark'
+								),
 							},
-							minify: true
-						} )
+							minify: true,
+						} ),
 					},
-				]
-			}
-		]
-	}
+				],
+			},
+		],
+	},
 };

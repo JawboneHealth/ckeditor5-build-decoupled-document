@@ -36,7 +36,6 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
-import Print from './printPlugin';
 
 export default class DecoupledEditor extends DecoupledEditorBase {}
 
@@ -72,7 +71,6 @@ DecoupledEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	Base64UploadAdapter,
-	Print,
 ];
 
 // Editor configuration.
@@ -106,7 +104,6 @@ DecoupledEditor.defaultConfig = {
 			'|',
 			'undo',
 			'redo',
-			'print',
 		],
 	},
 	image: {
@@ -122,6 +119,5 @@ DecoupledEditor.defaultConfig = {
 	table: {
 		contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ],
 	},
-	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en',
 };
