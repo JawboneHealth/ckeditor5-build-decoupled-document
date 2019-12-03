@@ -22,7 +22,6 @@ import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
-import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
@@ -57,7 +56,6 @@ DecoupledEditor.builtinPlugins = [
 	EasyImage,
 	Heading,
 	Image,
-	ImageCaption,
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
@@ -100,7 +98,6 @@ DecoupledEditor.defaultConfig = {
 			'blockquote',
 			'imageUpload',
 			'insertTable',
-			'mediaEmbed',
 			'|',
 			'undo',
 			'redo',
